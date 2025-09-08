@@ -14,8 +14,15 @@ public class TreeSpawnerScript : MonoBehaviour
     }
     void clone(GameObject currentgameObject)
     {
-
-        Vector3 randomPosition = new Vector3(Random.Range(-25, 25), 0, Random.Range(-25, 25));
+        int y;
+        if (currentgameObject.name=="Rock")
+        {
+            y = -21;
+        } else
+        {
+            y = -12;
+        }
+        Vector3 randomPosition = new Vector3(Random.Range(-25, 25), y, Random.Range(-25, 25));
         Instantiate(currentgameObject, randomPosition, Quaternion.identity);
     }
 
